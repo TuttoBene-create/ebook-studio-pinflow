@@ -1,72 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ebook Studio PinFlow</title>
-    <style>
-        body {
-            background-color: #101828;
-            color: #FFFFFF;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            color: #00D4FF;
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 2em;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        a {
-            color: #00D4FF;
-            text-decoration: none;
-            border: 2px solid #00D4FF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        a:hover {
-            background-color: #00D4FF;
-            color: #101828;
-        }
-        .footer {
-            margin-top: 4em;
-            font-size: 0.9em;
-            color: #888;
-        }
-        .footer a {
-            border: none;
-            padding: 0;
-            font-weight: normal;
-            text-decoration: underline;
-        }
-        .footer a:hover {
-            background-color: transparent;
-            color: #FFFFFF;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mike Skylan | Author</title>
+  <style>
+    :root {
+      --navy: #101828;
+      --cyan: #00D4FF;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: clamp(1.25rem, 5vw, 3rem);
+      background: var(--navy);
+      color: var(--white);
+      font: 1rem/1.5 system-ui, sans-serif;
+    }
+    .page { width: min(100%, 48rem); }
+    header, footer { text-align: center; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+    header p { margin: 0.75rem 0 2rem; }
+    .books {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .book {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.25rem;
+      border: 1px solid var(--cyan);
+      border-radius: 0.75rem;
+      color: var(--white);
+      font-size: 1.125rem;
+      text-decoration: none;
+    }
+    .book span, footer a { color: var(--cyan); }
+    .book span { font-size: 0.875rem; }
+    .book:hover, .book:focus-visible { background: var(--cyan); color: var(--navy); }
+    .book:hover span, .book:focus-visible span { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+    footer { margin-top: 2rem; }
+    @media (max-width: 38rem) {
+      .books { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Ebook Studio PinFlow</h1>
-    <p>Publishing practical e-books for first-time managers.</p>
-    
-    <a href="https://www.amazon.com/dp/B0HQ7HRYHQ" target="_blank">View our latest book on Amazon</a>
-
-    <div class="footer">
-        <p>&copy; 2026 Ebook Studio PinFlow. All rights reserved.</p>
-        <p><a href="https://tuttobene-create.github.io/privacy/" target="_blank">Privacy Policy</a></p>
-    </div>
+  <div class="page">
+    <header>
+      <h1>Mike Skylan | Author</h1>
+      <p>Practical guides for managers and families</p>
+    </header>
+    <main class="books" aria-label="Books">
+      <a class="book" href="https://www.amazon.com/dp/B0HQ7HRYHQ">
+        <strong>Managing Former Peers</strong>
+        <span>View on Amazon</span>
+      </a>
+      <a class="book" href="https://www.amazon.com/dp/B0HRLC23YB">
+        <strong>From Shoebox to Family Album</strong>
+        <span>View on Amazon</span>
+      </a>
+    </main>
+    <footer>
+      <a href="https://tuttobene-create.github.io/privacy/">Privacy Policy</a>
+    </footer>
+  </div>
 </body>
 </html>
